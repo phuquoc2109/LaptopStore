@@ -2,14 +2,14 @@ import React from 'react';
 import './Product.css'
 
 function Product(props) {
-    /* const {product, onAdd} = props; */
+    const {product, onAdd} = props; 
     return (
         <div className="product">
-            <img className="small" src={props.product.image} alt={props.product.name} />
-            <h3>{props.product.name}</h3>
-            <h4>{props.product.price} VNĐ</h4>
+            <img className="small" src={product.image} alt={product.name} />
+            <h3>{product.name}</h3>
+            <h4>{product.price.toLocaleString()} VNĐ</h4>
             <div>
-                <button onClick={() => props.onAdd(props.product) }>Add to Cart</button>
+                <button  className="button-product" onClick={() => onAdd(product) }>Add to Cart</button>
             </div>
         </div>
     )

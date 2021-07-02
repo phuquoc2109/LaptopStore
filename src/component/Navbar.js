@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-function Navbar(){
+function Navbar(props){
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
+    const {countCartItems} = props;
 
     const handleClick = () => {
         setClick(!click);
@@ -48,8 +49,13 @@ function Navbar(){
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/cart" className="nav-links" onClick={closeMobileMenu}>
+                                <Link to="/cart" className="nav-links noti" onClick={closeMobileMenu}>
                                     Cart <i class="fas fa-shopping-cart"></i>
+                                    {countCartItems? (
+                                        <button class="badge">{countCartItems}</button>
+                                    ) : (
+                                        ''
+                                    )}
                                 </Link>
                             </li>
                             <li className="nav-item">

@@ -56,7 +56,6 @@ function App() {
   }
   
     
-    console.log(valueInput);
   return (
     <Router>
 

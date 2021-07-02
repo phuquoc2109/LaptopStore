@@ -3,7 +3,9 @@
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  overflow-x: visible;
+}
+.App{
+  overflow-x:hidden;
 }
 #button {
   display: inline-block;
@@ -53,6 +55,7 @@
   line-height: 1.9;
 }
 @media (min-width: 500px) {
+  
   .content {
     width: 43%;
   }

@@ -10,6 +10,8 @@
     width: 50%;
     height: auto;
     flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
 }
 .bill-11{
     display: flex;
@@ -26,8 +28,8 @@
     text-align: center;
     color: rgb(85, 85, 85);
 }
-.bill-1-1{
-    padding-right: 210px;
+.bill-1-1 input{
+    width: 350px;
 }
 .bill-1-1 label{
     display: flex;
@@ -54,8 +56,8 @@
     padding: 10px
 }
 .bill-2-1 img{
-    width: 200px;
-    height: 150px;
+    width: 250px;
+    height: 200px;
     padding: 20px;
 }
 .bill-2-2 {
@@ -65,4 +67,16 @@
     display: flex;
     justify-content: space-around;
     padding: 10px;
+}
+@media screen and (max-width: 760px) {
+    .bill-2-1{
+        flex-direction: column;
+    }
+    .bill{
+        flex-direction: column;
+    }
+    .bill-1,
+    .bill-2{
+        width: 100%;
+    }
 }

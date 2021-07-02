@@ -10,6 +10,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
+    align-self: center;
     flex-wrap: wrap;
     min-height: 400px;
     background: url('https://theghostrunner.co/wp-content/uploads/2017/12/top-banner-laptop-on-desk.jpg');
@@ -56,5 +58,12 @@ textarea{
     transition: all 0.3s ease-out;
 }
 @media screen and (max-width: 960px) {
-    
+    .row-contact{
+        flex-wrap: wrap;
+        font-size: 18px;
+        padding: 40px 455px;
+    }
+    .contact{
+        min-height: 500px;
+    }
 }

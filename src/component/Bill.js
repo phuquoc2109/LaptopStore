@@ -3,8 +3,6 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import './Bill.css'
 import { Link, Route } from 'react-router-dom';
-import ExportBill from './ExportBill';
-import App from '../App';
 
 function Bill(props) {
     const { 
@@ -13,7 +11,11 @@ function Bill(props) {
          taxPrice, 
          shippingPrice, 
          totalPrice, 
-         handleInput } = props;
+         handleNameInput,
+         handlePhoneInput,
+         handleEmailInput,
+         handleAddressInput 
+        } = props;
     
     
     
@@ -31,19 +33,19 @@ function Bill(props) {
                         <form onSubmit={(event) => submitForm(event)} action="" className="bill-11">
                             <div className="bill-1-1">
                                 <label htmlFor="">Full Name</label>&ensp;
-                                <input name="fullname" type="text" onChange={(e) => handleInput(e)} />
+                                <input name="fullname" type="text" onChange={(e) => handleNameInput(e)} />
                             </div>
                             <div className="bill-1-1">
                                 <label htmlFor="">Phone number</label>&ensp;
-                                <input name="phone" type="number" onChange={(e) => handleInput(e)} />
+                                <input name="phone" type="number" onChange={(e) => handlePhoneInput(e)} />
                             </div>
                             <div className="bill-1-1">
                                 <label htmlFor="">Email</label>&ensp;
-                                <input name="email" type="email" onChange={(e) => handleInput(e)} />
+                                <input name="email" type="email" onChange={(e) => handleEmailInput(e)} />
                             </div>
                             <div className="bill-1-1">
                                 <label htmlFor="">Address</label>&ensp;
-                                <input name="address" type="text" onChange={(e) => handleInput(e)} />
+                                <input name="address" type="text" onChange={(e) => handleAddressInput(e)} />
                             </div>
                         </form>
                     <div className="bill-button">

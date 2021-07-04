@@ -12,7 +12,7 @@ function Cart(props) {
     return (
         <aside className="block col-1">
             <Navbar />
-            <h2>Cart Product<i class="fas fa-shopping-cart cart-cart"></i></h2>
+            <h2>Cart Product</h2>
             
             <div>
                 {cartItems.length === 0  &&  <h5>CART IS EMPTY</h5>}

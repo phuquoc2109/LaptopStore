@@ -1,14 +1,14 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import './SignIn.css'
+import './SignUp.css'
 
 function SignIn() {
     return (
         <div>
             <Navbar />
             <div className="main">
-                <form action="" method="POST" className="form" id="form-1">
+                <form action=""  className="form" id="form-1">
                     <h2 className="heading">SIGN UP</h2>
                    
 

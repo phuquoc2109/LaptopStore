@@ -12,7 +12,9 @@ function Home(props){
         <div>
             <Navbar countCartItems={cartItems.length}/>
             <Slideshow />
-            <Products onAdd={onAdd}  />
+            <Products 
+                onAdd={onAdd} 
+                />
             <Footer />
         </div>
     )

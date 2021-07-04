@@ -4,15 +4,17 @@ import Footer from './Footer';
 import { Link, Route } from 'react-router-dom';
 import './ExportBill.css';
 
-function ExportBill(props){
-    const {valueInput, cartItems, totalPrice} = props;
+function ExportBill(props) {
+    const { 
+        valueNameInput,
+        valuePhoneInput,
+        valueEmailInput,
+        valueAddressInput,
+        cartItems,
+        totalPrice } = props;
 
-    valueInput.map((value)=>(
-        console.log(value)
-    ))
-    console.log(valueInput);
-    console.log(cartItems);
-    return(
+
+    return (
         <div>
             <Navbar />
             <div className="exportbill-title">Payment Receipt</div>
@@ -25,27 +27,30 @@ function ExportBill(props){
                     <div className="exportbill-form-1-lable">Name product</div>
                     <div className="exportbill-form-1-lable">Total price</div>
                 </div>
-                
                 <div className="exportbill-form-2">
-                {valueInput.map((value, index) =>(
-                    <div className="exportbill-form-2-form"> 
-                        <div className="exportbill-form-2-value" >{value.fullname}</div>
-                        <div className="exportbill-form-2-value">{value.phone}</div>
-                        <div className="exportbill-form-2-value">{value.email}</div>
-                        <div className="exportbill-form-2-value">{value.address}</div>
+                    <div className="exportbill-form-2-form">
+                        <div className="exportbill-form-2-value">{valueNameInput.fullname}</div>
                     </div>
-                ))}
-                <div className="bill-item">
-                {cartItems.map((item)=>(      
-                        <div className="">{item.id}: {item.name}</div>
-                ))}
-                </div>
-                <div className="exportbill-form-2-form">{totalPrice.toLocaleString()} VNĐ</div>
+                    <div className="exportbill-form-2-form">
+                        <div className="exportbill-form-2-value">{valuePhoneInput.phone}</div>
+                    </div>
+                    <div className="exportbill-form-2-form">
+                        <div className="exportbill-form-2-value">{valueEmailInput.email}</div>
+                    </div>
+                    <div className="exportbill-form-2-form">
+                        <div className="exportbill-form-2-value">{valueAddressInput.address}</div>
+                    </div>
+                    <div className="bill-item">
+                        {cartItems.map((item) => (
+                            <div className="">{item.id}: {item.name}</div>
+                        ))}
+                    </div>
+                    <div className="exportbill-form-2-form">{totalPrice.toLocaleString()} VNĐ</div>
                 </div>
             </form>
-            
+
         </div>
-        
+
     )
 }
 export default ExportBill;

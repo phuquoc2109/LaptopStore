@@ -4,11 +4,16 @@ import Footer from './Footer';
 import './SignUp.css'
 
 function SignIn() {
+
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <div>
             <Navbar />
             <div className="main">
-                <form action=""  className="form" id="form-1">
+                <form onSubmit={handleOnSubmit} action=""  className="form" id="form-1">
                     <h2 className="heading">SIGN UP</h2>
                    
 

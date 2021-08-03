@@ -5,11 +5,16 @@ import Footer from './Footer';
 
 function Contact(props){
     const { cartItems} = props;
+
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+    }
+
     return(
         <div >
             <Navbar countCartItems={cartItems.length} />
             <h2>Contact</h2>
-            <form className="contact">
+            <form onSubmit={handleOnSubmit} className="contact">
                 <div className="row-contact">
                     <label htmlFor="">Full Name</label>
                     <input type="text" placeholder="Full Name..." />
@@ -29,7 +34,7 @@ function Contact(props){
                 </div>
                 <div className="row-contact ">
                     <button className="button-contact">Send</button>
-            </div>
+                </div>
             </form>
             <Footer />
         </div>

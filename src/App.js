@@ -12,6 +12,9 @@ import ScroollToTop from './component/Page/ScroollToTop';
 import { Fragment } from 'react';
 import Bill from './component/Bill';
 import ExportBill from './component/ExportBill';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -20,19 +23,20 @@ function App() {
     const exist = cartItems.find(x => x.id === product.id);
     if (exist) {
       setCartItems(cartItems.map(x => x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x))
-      alert("Add to cart successfully");
+      toast.success("Increase the number of successes");
     } else {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
-      alert("Add to cart successfully");
+      toast.success("Add to cart successfully");
     }
   }
   const onRemove = (product) => {
     const exist = cartItems.find(x => x.id === product.id);
     if (exist.qty === 1) {
       setCartItems(cartItems.filter(x => x.id !== product.id))
-      alert("Remove from cart");
+      toast.warn("Remove from cart");
     } else {
       setCartItems(cartItems.map(x => x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x))
+      toast.warn("Reduce the number of successes");
     }
   }
 
@@ -47,14 +51,14 @@ function App() {
   const handleNameInput = (e) => {
     const value = e.target.value;
     const name = e.target.name;
-
-    if (typingNameTimeoutRef.current) {
-      clearTimeout(typingNameTimeoutRef.current);
-    };
-    typingNameTimeoutRef.current = setTimeout(() => {
-      setValueNameInput({ [name]: value });
-    }, 1500);
-  }
+      if (typingNameTimeoutRef.current) {
+        clearTimeout(typingNameTimeoutRef.current);
+      };
+      typingNameTimeoutRef.current = setTimeout(() => {
+        setValueNameInput({ [name]: value });
+      }, 1500);
+    }
+  
 
   const [valueEmailInput, setValueEmailInput] = useState('');
   const typingEmailTimeoutRef = useRef(null);
@@ -98,6 +102,13 @@ function App() {
     }, 1500);
   }
 
+  const submitForm = (e) => {
+   
+    console.log(e);
+  }
+
+  toast.configure();
+
   return (
     <Router>
 
@@ -134,6 +145,7 @@ function App() {
               handleEmailInput={handleEmailInput}
               
               handleAddressInput={handleAddressInput}
+              submitForm = {submitForm}
             />
           </Route>
           <Route path="/cart/bill/exportbill"  >

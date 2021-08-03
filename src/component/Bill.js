@@ -14,15 +14,10 @@ function Bill(props) {
          handleNameInput,
          handlePhoneInput,
          handleEmailInput,
-         handleAddressInput 
+         handleAddressInput, 
+         submitForm
         } = props;
     
-    
-    
-    const submitForm = (event) => {
-        event.preventDefault();
-        
-    }
 
     return (
         <div>
@@ -30,7 +25,7 @@ function Bill(props) {
             <div className="bill">
                 <div className="bill-1">
                     <div className="bill-title">Customer Information</div>
-                        <form onSubmit={(event) => submitForm(event)} action="" className="bill-11">
+                        <form className="bill-11">
                             <div className="bill-1-1">
                                 <label htmlFor="">Full Name</label>&ensp;
                                 <input name="fullname" type="text" onChange={(e) => handleNameInput(e)} />
@@ -47,11 +42,12 @@ function Bill(props) {
                                 <label htmlFor="">Address</label>&ensp;
                                 <input name="address" type="text" onChange={(e) => handleAddressInput(e)} />
                             </div>
+                            
                         </form>
                     <div className="bill-button">
                         <Link to={'/cart'} ><button className="button-price"><i class="fas fa-undo-alt">&ensp;Cart</i></button></Link>
+                        <Link to={'/cart/bill/exportbill'}><button type="submit" className="button-price"><i class="fas fa-check">&ensp;Confirm</i></button></Link>
                         
-                        <Link to={'/cart/bill/exportbill'}   ><button className="button-price"><i class="fas fa-check">&ensp;Confirm</i></button></Link>
                     </div>
                 </div>
                 
